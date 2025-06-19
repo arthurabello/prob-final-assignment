@@ -116,8 +116,46 @@ $
   EE(S) = 0.35 dot 4.10 + 0.65 dot 5.5 approx 5.01 "minutes"
 $ <equation_final_expected_waiting_time>.
 
-On @section_problem1a our simulation shows an average waiting time of $5.010 "min"$, close enough to the analytical expected value.
+On @section_problem1a our simulation shows an average waiting time of $5.060 "min"$, close enough to the analytical expected value.
 
+Now for the standard deviation, we calculate the variance of $S$ as follows:
+
+$
+  E(S_"fast") = 4.10\
+  E(S_"fast"^2) = int_(-oo)^oo phi^2 g(phi) d phi = int_2^6 phi^2 (0.25 + 0.02(phi - 4)) d phi\
+
+  = 0.25 int_2^6 phi^2 d phi + 0.02 int_2^6 phi^3 d phi - 0.08 int_2^6 phi^2 d phi\
+
+  = 0.25 [phi^3/3]_2^6 + 0.02 [phi^4/4]_2^6 - 0.08 [phi^3/3]_2^6 approx 18.18
+$
+
+And now for the slow customers $S_"slow" ~ Exp(5.5)$:
+
+$
+  EE(S_"slow") = 5.5\
+
+  EE(S_"slow"^2) = 2m^2 = 2 dot 5.5^2 = 60.5
+$
+
+Therefore the total variance is:
+
+$
+  EE(S) = 5.01\
+
+  EE(S^2) = f EE(S_"fast"^2) + (1 - f) EE(S_"slow"^2)\
+
+  = 0.35 dot 18.18 + 0.65 dot 60.5 approx 45.69\
+
+  Var(S) = EE(S^2) - EE(S)^2 = 45.69 - 5.01^2 approx 20.56
+$ <equation_variance_waiting_time>
+
+And finally the standard deviation is:
+
+$
+  sigma_S = sqrt(Var(S)) approx 4.53 "minutes"
+$
+
+On @section_problem1 our simulation shows a standard deviation of $4.508 "minutes"$, which is close enough to the analytical value.
 
 = Problem 2
 <section_problem2>
