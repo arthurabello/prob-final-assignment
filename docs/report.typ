@@ -75,10 +75,25 @@ _coming soon_
 
 = User Parameters
 <section_user_parameters>
+
+The parameters used in the simulation are:
+
+$
+  "ID" = 02\
+  m = 5,5\
+  c = 0.02\
+  f = 0.035\
+  N = 425\
+  M = 3000
+$ <equation_user_parameters>
+
 = Problem 1
 <section_problem1>
 == Problem 1 (a)
 <section_problem1a>
+
+The simulation for this problem can be found #link("https://github.com/arthurabello/prob-final-assignment/blob/main/src/assignment.ipynb")[here]
+
 == Problem 1 (b)
 <section_problem1b>
 
@@ -159,11 +174,7 @@ On @section_problem1 our simulation shows a standard deviation of $4.508 "minute
 
 = Problem 2
 <section_problem2>
-== Problem 2 (a)
-<section_problem2a>
-== Problem 2 (b)
-<section_problem2b>
-== Problem 2 (c)
-<section_problem2c>
-== Problem 2 (d)
-<section_problem2d>
+
+The simulation for this problem can also be found #link("https://github.com/arthurabello/prob-final-assignment/blob/main/src/assignment.ipynb")[here]
+
+On the last cell of the notebook, there is a small comparative analysis of the results (switching/not switching stickers).
