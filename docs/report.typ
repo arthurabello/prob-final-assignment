@@ -47,6 +47,7 @@
 #let inner(var1, var2) = $angle.l var1, var2 angle.r$
 #let Var(arg) = $"Var"(arg)$
 #let int = $integral$
+#let Exp(arg) = $"Exp"(arg)$
 
 #align(center, text(20pt)[
  *Final Assignment - Probability Theory*
@@ -68,3 +69,63 @@ _coming soon_
 //  TABLE OF CONTENTS ----------------------------------
 #outline()
 #pagebreak()
+
+= Introduction
+<section_introduction>
+
+= User Parameters
+<section_user_parameters>
+= Problem 1
+<section_problem1>
+== Problem 1 (a)
+<section_problem1a>
+== Problem 1 (b)
+<section_problem1b>
+
+We have 2 kinds of customers, so the waiting time $S$ is a combination of distributions:
+
+$
+  EE(S) = f EE(S_"fast") + (1 - f) EE(S_"slow")
+$ <equation_expected_waiting_time>
+
+From @section_user_parameters we have a $f approx 0.35$ of fast customers and a PDF of:
+
+$
+  g(phi) = 0.25 + c(phi - 4), 2 < phi < 6, c = 0.02
+$ <equation_pdf_fast_customers>
+
+The expected value is, therefore:
+
+$
+  EE(S_"fast") = int_(-oo)^oo phi g(phi) d phi = int_2^6 phi (0.25 + 0.02(phi - 4)) d phi\
+
+  = int_2^6 0.25 phi d phi + int_2^6 0.02 phi^2 d phi - int_2^6 0.08 phi d phi\
+
+  = 0.25 int_2^6 phi d phi + 0.02 int_2^6 phi^2 d phi - 0.08 int_2^6 phi d phi\
+
+  = 0.25 [phi^2/2]_2^6 + 0.02 [phi^3/3]_2^6 - 0.08 [phi^2/2]_2^6\
+
+  = 0.25 (36 - 4) + 0.02 (216 - 8) - 0.08 (36 - 4)\
+
+  = 32/4 + 0.02 dot 208/3 - 0.08 dot 32/4 approx 4.10
+$
+
+The remaining $S_"slow" ~ Exp(m = 5.5)$ customers have an expected value of $EE(S_"slow") = 5.5$, so the total expected waiting time is:
+
+$
+  EE(S) = 0.35 dot 4.10 + 0.65 dot 5.5 approx 5.01 "minutes"
+$ <equation_final_expected_waiting_time>.
+
+On @section_problem1a our simulation shows an average waiting time of $5.010 "min"$, close enough to the analytical expected value.
+
+
+= Problem 2
+<section_problem2>
+== Problem 2 (a)
+<section_problem2a>
+== Problem 2 (b)
+<section_problem2b>
+== Problem 2 (c)
+<section_problem2c>
+== Problem 2 (d)
+<section_problem2d>
